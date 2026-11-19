@@ -3,6 +3,8 @@
 import { getWeatherData } from "../api/weatherAPI.js";
 
 export async function processWeatherData(location) {
+    try{
+
 const data = await getWeatherData(location);
 
 const {resolvedAddress} = data;
@@ -33,7 +35,12 @@ const weatherInfo = {
     minTemperature: tempmin,
 
 }
-
 return weatherInfo;
+
+    } catch(error){
+        console.error(error.message);
+        throw error;
+    }
+
 }
 
