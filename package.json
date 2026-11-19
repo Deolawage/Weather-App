@@ -1,0 +1,29 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack serve --config webpack.dev.js",
+    "watch": "webpack --watch --config webpack.dev.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^7.1.5",
+    "css-minimizer-webpack-plugin": "^8.0.0",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.8",
+    "mini-css-extract-plugin": "^2.10.2",
+    "prettier": "^3.10.1",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.112.2",
+    "webpack-cli": "^7.3.1",
+    "webpack-dev-server": "^6.1.0",
+    "webpack-merge": "^6.0.1"
+  }
+}
