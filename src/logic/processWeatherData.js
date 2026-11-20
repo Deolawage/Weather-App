@@ -1,46 +1,52 @@
-//processWeatherData.js
-
 import { getWeatherData } from "../api/weatherAPI.js";
 
 export async function processWeatherData(location) {
-    try{
+    try {
+        const data = await getWeatherData(location);
 
-const data = await getWeatherData(location);
+        const { resolvedAddress } = data;
 
-const {resolvedAddress} = data;
+        const {
+            temp,
+            feelslike,
+            conditions,
+            humidity,
+            windspeed,
+            visibility,
+            icon,
+        } = data.currentConditions;
 
-const {
-  temp,
-  feelslike,
-  conditions,
-  humidity,
-  windspeed,
-  icon,
-} = data.currentConditions;
+        const { sunrise, sunset, tempmax, tempmin } = data.days[0];
 
+        // Process daily forecast
+        const forecast = data.days.map((day) => ({
+            datetime: day.datetime,
+            conditions: day.conditions,
+            icon: day.icon,
+            maxTemperature: day.tempmax,
+            minTemperature: day.tempmin
+        }));
 
-const { sunrise, sunset, tempmax, tempmin } = data.days[0];
+        const weatherInfo = {
+            location: resolvedAddress,
+            temperature: temp,
+            feelsLike: feelslike,
+            conditions,
+            humidity,
+            windSpeed: windspeed,
+            visibility,
+            icon,
+            sunrise,
+            sunset,
+            maxTemperature: tempmax,
+            minTemperature: tempmin,
+            forecast
+        };
 
-const weatherInfo = {
-    location: resolvedAddress,
-    temperature: temp,
-    feelsLike: feelslike,
-    conditions,
-    humidity,
-    windSpeed: windspeed,
-    icon,
-    sunrise,
-    sunset,
-    maxTemperature: tempmax,
-    minTemperature: tempmin,
+        return weatherInfo;
 
-}
-return weatherInfo;
-
-    } catch(error){
+    } catch (error) {
         console.error(error.message);
         throw error;
     }
-
 }
-
