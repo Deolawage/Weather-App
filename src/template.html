@@ -3,19 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
+    <title>Weather.io</title>
     <!--<link href="style.css/style.css" rel="stylesheet">-->
 </head>
 <body>
-    <div id="content">
-                <div class="sidebar"></div>
+   <div class="app-container">
+
+    <!--Header and Search-->
+    <header class="app-header">
+         <h1>Weather App</h1>
+
+            <form class="search-form">
+                <input type="search" placeholder="Search location">
+                <button type="submit">Search</button>
+            </form>
 
 
-       <main class="main-content">
-<h1>Hey, this is nice.</h1>
+    </header>
 
-</main>
+    <main class="weather-container">
+
+        <section class="current-weather">
+            <h2 class="location"></h2>
+            <p class="temperature"></p>
+            <p class="condition"></p>
+            <p class="feels-like"></p>
+            <img  alt="weather icon" class="weather-icon">
+        </section>
+
+        <section class="weather-details">
+            <h2>Weather Details</h2>
+
+    <div class="details-grid">
+
+        <div class="detail-card">
+            <h3>Feels Like</h3>
+            <p class="feels-like-value"></p>
+        </div>
+
+        <div class="detail-card">
+            <h3>Humidity</h3>
+            <p class="humidity-value"></p>
+        </div>
+
+        <div class="detail-card">
+            <h3>Wind Speed</h3>
+            <p class="windspeed-value"></p>
+        </div>
+
+        <div class="detail-card">
+            <h3>Visibility</h3>
+            <p class="visibility-value"></p>
+        </div>
+
+        
 
     </div>
+        </section>
+
+        <section class="sun-times">
+            <h2>Sunrise & Sunset</h2>
+            <div class="sun-times-container">
+
+                 <div class="sun-times-card">
+            <h3>Sunrise</h3>
+            <p class="sunrise-value"></p>
+        </div>
+            </div>
+
+             <div class="sun-times-card">
+            <h3>Sunset</h3>
+            <p class="sunset-value"></p>
+        </div>
+        </section>
+
+       <section class="daily-forecast">
+    <h2>Daily Forecast</h2>
+
+    <div class="forecast-container">
+        <!-- Forecast cards will be generated here by JavaScript -->
+    </div>
+</section>
+
+
+    </main>
+   </div>
+
+    
 </body>
 </html>
