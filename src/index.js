@@ -95,6 +95,4 @@ unitToggle.addEventListener("click", () => {
     displayWeather(currentWeatherInfo, currentUnit);
 });
 
-console.log(celsiusToFahrenheit(20)); // 68
-console.log(fahrenheitToCelsius(68)); // 20
 
