@@ -46,7 +46,7 @@ export async function processWeatherData(location) {
         return weatherInfo;
 
     } catch (error) {
-        console.error(error.message);
+        console.error(error);
         throw error;
     }
 }

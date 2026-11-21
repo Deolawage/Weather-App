@@ -7,16 +7,14 @@ export async function getWeatherData(location){
     
     const response = await fetch(url)
 
-    if(!response.ok){
-        throw new Error("What the fuck, get back to work.");
-    }
+    if (!response.ok) {
+    throw new Error(
+        `HTTP Error: ${response.status} - ${response.statusText}`
+    );
+}
 
-    const data = await response.json();
-    console.log(data.days[0]);
-    console.log(data.days);
-console.log(data.days[0]);
-console.log(data);
-console.log(data.days[0].sunset);
+const data = await response.json();
+    
  
     return data;
 

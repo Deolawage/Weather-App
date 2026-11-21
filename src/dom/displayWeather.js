@@ -6,9 +6,12 @@ import { displayWeatherDetails } from "./displayWeatherDetails.js";
 import { displaySunTimes } from "./displaySunTime.js";
 import { displayForecast } from "./displayForecast.js";
 
-export function displayWeather(weatherInfo) {
-    displayCurrentWeather(weatherInfo);
-    displayWeatherDetails(weatherInfo);
+export function displayWeather(weatherInfo, currentUnit) {
+   displayCurrentWeather(weatherInfo, currentUnit);
+
+    displayWeatherDetails(weatherInfo, currentUnit);
+
     displaySunTimes(weatherInfo);
-    displayForecast(weatherInfo.forecast);
+
+    displayForecast(weatherInfo.forecast, currentUnit);
 }
